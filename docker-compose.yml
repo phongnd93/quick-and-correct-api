@@ -1,0 +1,16 @@
+name: d2m
+services:
+  postgres:
+    image: postgres:14
+    container_name: d2m-postgres
+    ports:
+      - 6100:5432
+    healthcheck:
+      test: [ 'CMD', 'pg_isready', '-U', 'd2m' ]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+    environment:
+      POSTGRES_PASSWORD: d2m
+      POSTGRES_USER: d2m
+      POSTGRES_DB: d2m

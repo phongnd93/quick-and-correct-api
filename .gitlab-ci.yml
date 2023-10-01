@@ -1,0 +1,28 @@
+image: node:latest
+
+stages:
+  - install
+  - format
+  - lint
+
+cache:
+  key: $CI_COMMIT_REF_SLUG
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: install
+  script:
+    - yarn install
+  artifacts:
+    paths:
+      - node_modules/
+format:
+  stage: format
+  script:
+    - npx prettier --check "{src,test}/**/*.ts"
+
+lint:
+  stage: lint
+  script:
+    - npx eslint "{src,test}/**/*.ts"

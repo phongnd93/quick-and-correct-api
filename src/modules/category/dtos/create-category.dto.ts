@@ -18,7 +18,7 @@ export class CreateCategoryDto {
   @IsNumber()
   @IsNotEmpty()
   numlimit: number;
-  
+
   @ApiProperty({ default: true })
   @IsBoolean()
   @IsNotEmpty()

@@ -1,9 +1,9 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationError, ValidationPipe } from '@nestjs/common';
 import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
-import * as cookieParser from 'cookie-parser';
 // import helmet from 'helmet';
 import { DocumentBuilder, SwaggerCustomOptions, SwaggerModule } from '@nestjs/swagger';
+import cookieParser from 'cookie-parser';
 import { MainModule } from './main.module';
 import { name as pkgName, description as pkgDesc, version as pkgVersion } from '../package.json';
 import { D2MBadRequestException } from './common/infra-exception';

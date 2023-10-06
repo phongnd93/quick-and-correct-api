@@ -9,7 +9,7 @@ export class UpdateCategoryDto extends PartialType(CreateCategoryDto) {
   @IsString()
   @IsNotEmpty()
   description: string;
-  
+
   @ApiProperty()
   @IsNumber()
   @IsNotEmpty()
@@ -19,7 +19,7 @@ export class UpdateCategoryDto extends PartialType(CreateCategoryDto) {
   @IsNumber()
   @IsNotEmpty()
   numlimit: number;
-  
+
   @ApiProperty({ default: true })
   @IsBoolean()
   @IsNotEmpty()
